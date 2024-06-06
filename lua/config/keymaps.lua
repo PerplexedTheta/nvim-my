@@ -29,5 +29,5 @@ keymap(">", "v", ">gv") -- Shift Indentation to Right
 keymap("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
 
 -- Comments
-vim.api.nvim_set_keymap("n", "<C-_>", "gtc", { noremap = false })
-vim.api.nvim_set_keymap("v", "<C-_>", "goc", { noremap = false })
+vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { noremap = false })
+vim.api.nvim_set_keymap("v", "<C-/>", "gcc", { noremap = false })
