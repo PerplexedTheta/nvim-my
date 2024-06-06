@@ -4,7 +4,8 @@ local config = function()
             theme = auto,
             globalstatus = true,
         },
-        tabline = {
+        tabline = {},
+        sections = {
             lualine_a = {
                 "mode"
             },
@@ -30,7 +31,6 @@ local config = function()
                 "location"
             },
         },
-        sections = {},
     })
 end
 
