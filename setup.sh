@@ -1,16 +1,25 @@
 #!/usr/bin/env bash
 
 ## check if we are on macos
-if [[ "$(uname)" != "Darwin" ]]; then
-    echo -ne "This script is designed for Darwin systems.\n"
+if [[ "$(uname)" == "Darwin" ]]; then
+    ## brew check
+    brew doctor
+    brew update
+    ## nvim & deps
+    brew install nvim
+    brew install ripgrep
+    ## debuggers
+    brew install luarocks
+	
+    ## done
+    echo -ne "Fin\n"
+
+elif [[ "$(uname)" == "Linux" ]]; then
+    echo -ne "Not implemented for Linux systems!\n"
     exit 1
+
+else
+    echo -ne "Unable to determine system type\n"
+    exit 1
+
 fi
-
-## brew
-brew doctor
-brew update
-brew install nvim
-brew install ripgrep
-
-## done
-echo -ne "Fin\n"
