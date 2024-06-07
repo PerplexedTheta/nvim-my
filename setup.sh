@@ -8,8 +8,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
     ## nvim & deps
     brew install nvim
     brew install ripgrep
-    ## debuggers
+    ## debuggers & lsp
     brew install luarocks
+    brew install openjdk
+    brew install mvn
+    brew install node npm
+    brew install golang
 	
     ## done
     echo -ne "Fin\n"

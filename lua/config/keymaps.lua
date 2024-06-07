@@ -6,7 +6,7 @@ keymap("<leader>bp", "bprevious", "n") -- Prev buffer
 keymap("<leader>bb", "e #", "n") -- Switch to Other Buffer
 keymap("<leader>`", "e #", "n") -- Switch to Other Buffer
 
--- Directory Navigatio}n
+-- Directory Navigation
 keymap("<leader>m", "NvimTreeFocus", "n")
 keymap("<leader>f", "NvimTreeToggle", "n")
 
