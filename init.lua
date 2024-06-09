@@ -1,2 +1,2 @@
 -- default init procedure
-require('config');
+require("config")

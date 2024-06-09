@@ -81,7 +81,6 @@ local config = function()
         filetypes = { "yaml" },
     })
 
-
     -- typescript
     lspconfig.tsserver.setup({
         on_attach = on_attach,

@@ -1,5 +1,5 @@
 local config = function()
-    local masonToolInstaller = require('mason-tool-installer')
+    local masonToolInstaller = require("mason-tool-installer")
 
     masonToolInstaller.setup({
         ensure_installed = {
@@ -31,7 +31,7 @@ local config = function()
             "typescript-language-server",
             "yaml-language-server",
         },
-        run_on_start = true
+        run_on_start = true,
     })
 end
 

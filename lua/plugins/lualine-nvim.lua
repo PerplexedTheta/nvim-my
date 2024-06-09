@@ -7,28 +7,28 @@ local config = function()
         tabline = {},
         sections = {
             lualine_a = {
-                "mode"
+                "mode",
             },
             lualine_b = {
-                "buffers"
+                "buffers",
             },
-            lualine_x = { 
+            lualine_x = {
                 "encoding",
                 {
                     "fileformat",
                     symbols = {
-                        unix = 'LF', -- e712
-                        dos = 'CRLF',  -- e70f
-                        mac = 'CR',  -- e711
-                    }
+                        unix = "LF", -- e712
+                        dos = "CRLF", -- e70f
+                        mac = "CR", -- e711
+                    },
                 },
-                "filetype"
+                "filetype",
             },
             lualine_y = {
-                "progress"
+                "progress",
             },
             lualine_z = {
-                "location"
+                "location",
             },
         },
     })
@@ -39,6 +39,6 @@ return {
     lazy = false,
     config = config,
     dependencies = {
-        "nvim-tree/nvim-web-devicons"
-    }
+        "nvim-tree/nvim-web-devicons",
+    },
 }
