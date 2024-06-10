@@ -27,6 +27,7 @@ local config = function()
             "shellcheck",
             "shfmt",
             "stylua",
+            "taplo",
             "tailwindcss-language-server",
             "typescript-language-server",
             "yaml-language-server",

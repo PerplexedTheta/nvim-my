@@ -17,9 +17,9 @@ local config = function()
                 {
                     "fileformat",
                     symbols = {
-                        unix = "LF", -- e712
+                        unix = "LF",  -- e712
                         dos = "CRLF", -- e70f
-                        mac = "CR", -- e711
+                        mac = "CR",   -- e711
                     },
                 },
                 "filetype",

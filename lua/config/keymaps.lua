@@ -1,10 +1,10 @@
 local keymap = require("util.keymapper").keymap
 
 -- Buffer Navigation
-keymap("<leader>bn", "bnext", "n") -- Next buffer
+keymap("<leader>bn", "bnext", "n")     -- Next buffer
 keymap("<leader>bp", "bprevious", "n") -- Prev buffer
-keymap("<leader>bb", "e #", "n") -- Switch to Other Buffer
-keymap("<leader>`", "e #", "n") -- Switch to Other Buffer
+keymap("<leader>bb", "e #", "n")       -- Switch to Other Buffer
+keymap("<leader>`", "e #", "n")        -- Switch to Other Buffer
 
 -- Directory Navigation
 keymap("<leader>m", "NvimTreeFocus", "n")
@@ -17,14 +17,15 @@ keymap("<C-k>", "wincmd k", "n") -- Navigate Up
 keymap("<C-l>", "wincmd l", "n") -- Navigate Right
 
 -- Window Management
-keymap("<leader>sv", "vsplit", "n") -- Split Vertically
-keymap("<leader>sh", "split", "n") -- Split Horizontally
+keymap("<leader>sv", "vsplit", "n")          -- Split Vertically
+keymap("<leader>sh", "split", "n")           -- Split Horizontally
 keymap("<leader>sm", "MaximizerToggle", "n") -- Toggle Minimise
 
 -- Indenting
 keymap("<", "v", "<gv") -- Shift Indentation to Left
 keymap(">", "v", ">gv") -- Shift Indentation to Right
 vim.api.nvim_set_keymap("n", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false })
+vim.api.nvim_set_keymap("v", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false })
 
 -- Show Full File-Path
 keymap("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path

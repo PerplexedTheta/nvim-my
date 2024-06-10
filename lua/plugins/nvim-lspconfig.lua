@@ -132,6 +132,7 @@ local config = function()
     local fixjson = require("efmls-configs.formatters.fixjson")
     local shellcheck = require("efmls-configs.linters.shellcheck")
     local shfmt = require("efmls-configs.formatters.shfmt")
+    local taplo = require("efmls-configs.formatters.taplo")
     local hadolint = require("efmls-configs.linters.hadolint")
     local cpplint = require("efmls-configs.linters.cpplint")
     local clangformat = require("efmls-configs.formatters.clang_format")
@@ -144,6 +145,8 @@ local config = function()
             "lua",
             "json",
             "jsonc",
+            "yaml",
+            "toml",
             "sh",
             "javascript",
             "javascriptreact",
@@ -173,6 +176,7 @@ local config = function()
                 typescript = { eslint, prettier_d },
                 json = { eslint, fixjson },
                 jsonc = { eslint, fixjson },
+                toml = { taplo },
                 sh = { shellcheck, shfmt },
                 javascript = { eslint, prettier_d },
                 javascriptreact = { eslint, prettier_d },
