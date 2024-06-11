@@ -3,6 +3,7 @@ local diagnostic_signs = require("util.icons").diagnostic_signs
 
 local config = function()
     require("neoconf").setup({})
+
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local lspconfig = require("lspconfig")
     local capabilities = cmp_nvim_lsp.default_capabilities()
