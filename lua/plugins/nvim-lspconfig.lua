@@ -102,7 +102,7 @@ local config = function()
         filetypes = { "sh", "aliasrc" },
     })
 
-    -- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
+    -- typescriptreact, javascriptreact, css, sass, scss, less, vue
     lspconfig.emmet_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
