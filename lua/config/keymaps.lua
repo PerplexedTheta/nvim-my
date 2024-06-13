@@ -24,6 +24,8 @@ keymap("<leader>sm", "MaximizerToggle", "n") -- Toggle Minimise
 -- Indenting
 keymap("<", "v", "<gv") -- Shift Indentation to Left
 keymap(">", "v", ">gv") -- Shift Indentation to Right
+vim.api.nvim_set_keymap("n", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false })
+vim.api.nvim_set_keymap("v", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false })
 
 -- Show Full File-Path
 keymap("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
