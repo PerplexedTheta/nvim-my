@@ -3,7 +3,10 @@ return {
     lazy = false,
     config = {
         filters = {
-            dotfiles = true,
+            dotfiles = false,
+        },
+        git = {
+            ignore = false,
         },
     },
 }
