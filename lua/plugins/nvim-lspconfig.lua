@@ -37,12 +37,13 @@ local config = function()
 
     -- perl
     lspconfig.perlnavigator.setup({
+        cmd = { "perlnavigator" },
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { "perl" },
         settings = {
             perlnavigator = {
-                perltidyProfile = "~/.config/nvim/.perltidyrc",
+                perltidyProfile = "/Users/ptfse-jake/.config/nvim/.perltidyrc",
                 perltidyEnabled = true,
                 perlcriticProfile = "",
                 perlcriticEnabled = true,
@@ -163,7 +164,6 @@ local config = function()
             "c",
             "cpp",
             "php",
-            "perl",
         },
         init_options = {
             documentFormatting = true,
