@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-## check if we are on macos
 if [[ "$(uname)" == "Darwin" ]]; then
     ## brew check
     brew doctor
@@ -13,9 +12,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
     brew install openjdk
     brew install mvn
     brew install node npm
-    brew install golang
+    brew install golang cargo
 
-    ## done
     echo -ne "Fin\n"
 
 elif [[ "$(uname)" == "Linux" ]]; then
@@ -32,9 +30,8 @@ elif [[ "$(uname)" == "Linux" ]]; then
     apt install default-jre default-jdk -y
     apt install maven -y
     apt install nodejs -y
-    apt install golang -y
+    apt install golang cargo -y
 
-    ## done
     echo -ne "Fin\n"
 
 else

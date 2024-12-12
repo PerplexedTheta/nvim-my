@@ -37,29 +37,19 @@ local config = function()
 
     -- perl
     lspconfig.perlnavigator.setup({
-        cmd = { "perlnavigator" },
+        cmd = {  },
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = { "perl" },
         settings = {
             perlnavigator = {
-                perltidyProfile = "/Users/ptfse-jake/.config/nvim/.perltidyrc",
-                perltidyEnabled = true,
-                perlcriticProfile = "",
+                perlPath = "/usr/bin/perl",
+                enableWarnings = true,
+                perltidyProfile = vim.env.HOME .. "/.config/nvim/.perltidyrc",
+                perlcriticProfile = vim.env.HOME .. ".config/nvim/.perlcriticrc",
                 perlcriticEnabled = true,
             },
         },
-    })
-
-    -- c/cpp
-    lspconfig.clangd.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        cmd = {
-            "clangd",
-            "--offset-encoding=utf-16",
-        },
-        filetypes = { "c", "cpp" },
     })
 
     -- php
@@ -84,7 +74,7 @@ local config = function()
     })
 
     -- typescript
-    lspconfig.tsserver.setup({
+    lspconfig.ts_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         filetypes = {
@@ -127,76 +117,6 @@ local config = function()
         on_attach = on_attach,
     })
 
-    local luacheck = require("efmls-configs.linters.luacheck")
-    local stylua = require("efmls-configs.formatters.stylua")
-    local eslint = require("efmls-configs.linters.eslint")
-    local prettier_d = require("efmls-configs.formatters.prettier_d")
-    local fixjson = require("efmls-configs.formatters.fixjson")
-    local shellcheck = require("efmls-configs.linters.shellcheck")
-    local shfmt = require("efmls-configs.formatters.shfmt")
-    local taplo = require("efmls-configs.formatters.taplo")
-    local hadolint = require("efmls-configs.linters.hadolint")
-    local cpplint = require("efmls-configs.linters.cpplint")
-    local clangformat = require("efmls-configs.formatters.clang_format")
-    local phpstan = require("efmls-configs.linters.phpstan")
-    local phpcbf = require("efmls-configs.formatters.phpcbf")
-
-    -- configure efm server
-    lspconfig.efm.setup({
-        filetypes = {
-            "lua",
-            "json",
-            "jsonc",
-            "yaml",
-            "toml",
-            "sh",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-            "vue",
-            "markdown",
-            "docker",
-            "html",
-            "css",
-            "scss",
-            "less",
-            "c",
-            "cpp",
-            "php",
-        },
-        init_options = {
-            documentFormatting = true,
-            documentRangeFormatting = true,
-            hover = true,
-            documentSymbol = true,
-            codeAction = true,
-            completion = true,
-        },
-        settings = {
-            languages = {
-                lua = { luacheck, stylua },
-                typescript = { eslint, prettier_d },
-                json = { eslint, fixjson },
-                jsonc = { eslint, fixjson },
-                toml = { taplo },
-                sh = { shellcheck, shfmt },
-                javascript = { eslint, prettier_d },
-                javascriptreact = { eslint, prettier_d },
-                typescriptreact = { eslint, prettier_d },
-                vue = { eslint, prettier_d },
-                markdown = { prettier_d },
-                docker = { hadolint, prettier_d },
-                html = { prettier_d },
-                css = { prettier_d },
-                scss = { prettier_d },
-                less = { prettier_d },
-                c = { clangformat, cpplint },
-                cpp = { clangformat, cpplint },
-                php = { phpstan, phpcbf },
-            },
-        },
-    })
 end
 
 return {

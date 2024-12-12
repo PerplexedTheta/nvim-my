@@ -4,11 +4,7 @@ local config = function()
     masonToolInstaller.setup({
         ensure_installed = {
             "bash-language-server",
-            "clang-format",
-            "clangd",
-            "cpplint",
             "css-lsp",
-            "efm",
             "emmet-ls",
             "eslint-lsp",
             "fixjson",

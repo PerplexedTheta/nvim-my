@@ -8,5 +8,8 @@ return {
         git = {
             ignore = false,
         },
+        view ={
+            side = 'right',
+        },
     },
 }
