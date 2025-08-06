@@ -5,6 +5,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     brew doctor
     brew update
     ## nvim & deps
+    python3 -m pip install -U pip
     brew install nvim
     brew install ripgrep
     ## debuggers & lsp
@@ -13,6 +14,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     brew install mvn
     brew install node npm
     brew install golang cargo
+    python3 -m pip install venv
 
     echo -ne "Fin\n"
 
@@ -31,6 +33,7 @@ elif [[ "$(uname)" == "Linux" ]]; then
     apt install maven -y
     apt install nodejs -y
     apt install golang cargo -y
+    apt install python3-venv -y
 
     echo -ne "Fin\n"
 

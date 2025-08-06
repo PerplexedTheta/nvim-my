@@ -1,7 +1,7 @@
 local keymap = require("util.keymapper").keymap
 
 -- Buffer formatting
-vim.keymap.set("n", "<leader>ft", function()
+vim.keymap.set("n", "<leader>bf", function()
     require("conform").format({ async = true }) -- run onform
 end)
 
