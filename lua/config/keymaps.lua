@@ -1,31 +1,37 @@
 local keymap = require("util.keymapper").keymap
 
+-- Buffer formatting
+vim.keymap.set("n", "<leader>ft", function()
+    require("conform").format({ async = true }) -- run onform
+end)
+
 -- Buffer Navigation
-keymap("<leader>bn", "bnext", "n")     -- Next buffer
+keymap("<leader>bn", "bnext", "n") -- Next buffer
 keymap("<leader>bp", "bprevious", "n") -- Prev buffer
-keymap("<leader>bb", "e #", "n")       -- Switch to Other Buffer
-keymap("<leader>`", "e #", "n")        -- Switch to Other Buffer
+keymap("<leader>bd", "bdelete", "n") -- Delete buffer
+keymap("<leader>nv", "vnew", "n") -- New buffer
+keymap("<leader>hn", "new", "n") -- New buffer, vertically
+keymap("<leader>bb", "e #", "n") -- Switch to Other Buffer
+keymap("<leader>`", "e #", "n") -- Switch to Other Buffer
 
 -- Directory Navigation
-keymap("<leader>m", "NvimTreeFocus", "n")
-keymap("<leader>f", "NvimTreeToggle", "n")
+keymap("<leader>tf", "NvimTreeFocus", "n")
+keymap("<leader>tt", "NvimTreeToggle", "n")
 
 -- Pane and Window Navigation
-keymap("<C-h>", "wincmd h", "n") -- Navigate Left
-keymap("<C-j>", "wincmd j", "n") -- Navigate Down
-keymap("<C-k>", "wincmd k", "n") -- Navigate Up
-keymap("<C-l>", "wincmd l", "n") -- Navigate Right
+keymap("<S-Up>", "wincmd k", "n") -- Navigate Up
+keymap("<S-Right>", "wincmd l", "n") -- Navigate Right
+keymap("<S-Down>", "wincmd j", "n") -- Navigate Down
+keymap("<S-Left>", "wincmd h", "n") -- Navigate Left
 
 -- Window Management
-keymap("<leader>sv", "vsplit", "n")          -- Split Vertically
-keymap("<leader>sh", "split", "n")           -- Split Horizontally
+keymap("<leader>sv", "vsplit", "n") -- Split Vertically
+keymap("<leader>sh", "split", "n") -- Split Horizontally
 keymap("<leader>sm", "MaximizerToggle", "n") -- Toggle Minimise
 
 -- Indenting
 keymap("<", "v", "<gv") -- Shift Indentation to Left
 keymap(">", "v", ">gv") -- Shift Indentation to Right
-vim.api.nvim_set_keymap("n", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false }) -- tidy file
-vim.api.nvim_set_keymap("v", "<leader>id", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = false }) -- tidy file
 
 -- Show Full File-Path
 keymap("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path

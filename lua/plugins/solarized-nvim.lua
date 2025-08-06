@@ -7,7 +7,6 @@ return {
     },
     config = function(_, opts)
         vim.o.termguicolors = true
-        vim.o.background = "light"
         vim.cmd.colorscheme "solarized"
         require("solarized").setup(opts)
     end,

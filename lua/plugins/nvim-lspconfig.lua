@@ -13,7 +13,40 @@ local config = function()
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- lua
+    -- bashls: bash
+    lspconfig.bashls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "sh", "aliasrc" },
+    })
+
+    -- dockerls: docker
+    lspconfig.dockerls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
+
+    -- emmet_ls: typescriptreact, javascriptreact, css, sass, scss, less, vue
+    lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
+            "sass",
+            "scss",
+            "svelte",
+            "pug",
+            "typescriptreact",
+            "vue"
+        },
+    })
+
+    -- lua_ls: lua
     lspconfig.lua_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
@@ -35,45 +68,35 @@ local config = function()
         },
     })
 
-    -- perl
-    lspconfig.perlnavigator.setup({
-        cmd = {  },
-        on_attach = on_attach,
-        capabilities = capabilities,
-        filetypes = { "perl" },
-        settings = {
-            perlnavigator = {
-                perlPath = "/usr/bin/perl",
-                enableWarnings = true,
-                perltidyProfile = vim.env.HOME .. "/.config/nvim/.perltidyrc",
-                perlcriticProfile = vim.env.HOME .. ".config/nvim/.perlcriticrc",
-                perlcriticEnabled = true,
-            },
-        },
-    })
-
-    -- php
+    -- intelephense: php
     lspconfig.intelephense.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         filetypes = { "php" },
     })
 
-    -- json
+    -- pylsp: python
+    lspconfig.pylsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "py", "python" },
+    });
+
+    -- pyright: python
+    lspconfig.pyright.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "py", "python" },
+    });
+
+    -- jsonls: json
     lspconfig.jsonls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         filetypes = { "json", "jsonc" },
     })
 
-    -- yaml
-    lspconfig.yamlls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        filetypes = { "yaml" },
-    })
-
-    -- typescript
+    -- ts_ls: typescript
     lspconfig.ts_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
@@ -86,35 +109,11 @@ local config = function()
         root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
     })
 
-    -- bash
-    lspconfig.bashls.setup({
+    -- yamlls: yaml
+    lspconfig.yamlls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-        filetypes = { "sh", "aliasrc" },
-    })
-
-    -- typescriptreact, javascriptreact, css, sass, scss, less, vue
-    lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        filetypes = {
-            "typescriptreact",
-            "javascriptreact",
-            "javascript",
-            "css",
-            "sass",
-            "scss",
-            "less",
-            "svelte",
-            "vue",
-            "html",
-        },
-    })
-
-    -- docker
-    lspconfig.dockerls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        filetypes = { "yaml" },
     })
 
 end
