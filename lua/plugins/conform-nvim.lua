@@ -7,8 +7,9 @@ return {
     opts = {
         -- Define your formatters
         formatters_by_ft = {
-            lua = { "stylua" },
+            html = { "htmlbeautifier" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
+            lua = { "stylua" },
             perl = { "perltidy" },
         },
         -- Set default options

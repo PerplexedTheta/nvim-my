@@ -6,6 +6,7 @@ local config = function()
             "bashls",
             "dockerls",
             "emmet_ls",
+            "htmlbeautifier",
             "intelephense",
             "jsonls",
             "lua_ls",
