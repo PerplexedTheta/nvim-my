@@ -1,8 +1,12 @@
 local keymap = require("util.keymapper").keymap
 
 -- Buffer formatting
-vim.keymap.set("n", "<leader>bf", function()
-    require("conform").format({ async = true }) -- run onform
+vim.keymap.set({"n", "v"}, "<leader>bf", function()
+    require("conform").format({
+        async = false,
+        lsp_fallback = true,
+        timeout_ms = 500,
+    }) -- run onform
 end)
 
 -- Buffer Navigation
